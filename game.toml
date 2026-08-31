@@ -1,0 +1,53 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Men in Black: The Game"
+id = "SLES-01047"
+players = 1
+exe = "disc/SLES_010.47"
+disc = ""
+load_address = "0x80010000"
+entry_pc = "0x80016C4C"
+text_size = "0x000A7000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "disc1.bin"
+cue_name = "disc1.cue"
+boot_exe = "SLES_010.47"
+known_sizes = [491271648]
+known_md5 = [
+  "3b1ec1faf97bc3e274f9a4ad6f59bddc",
+]
+known_sha1 = [
+  "060496048fae53cf79706ab3ce611c07701d4814",
+]
+known_crc32 = [
+  "207be6ce",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "men-in-black-the-game- Recompiled"
+memcard_dir = "saves"
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "4650ef3b153fb0f78346edd9ea4524e13d0b2e0d1b1e5bfe285a86a8ee85b8a7"

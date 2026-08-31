@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Men in Black: The Game",
+    "id": "SLES-01047",
+    "boot_exe": "SLES_010.47"
+  },
+  "marketing": {
+    "description": "A native recompilation setup host for Men in Black: The Game.",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "disc1.cue",
+    "bin_name": "disc1.bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 491271648,
+      "md5": "3b1ec1faf97bc3e274f9a4ad6f59bddc",
+      "sha1": "060496048fae53cf79706ab3ce611c07701d4814",
+      "crc32": "207be6ce"
+    },
+    "disc_fp": "4650ef3b153fb0f78346edd9ea4524e13d0b2e0d1b1e5bfe285a86a8ee85b8a7"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80016C4C",
+    "text_size": "0x000A7000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1470,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
